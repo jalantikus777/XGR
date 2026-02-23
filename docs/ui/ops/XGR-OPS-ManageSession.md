@@ -43,7 +43,7 @@ This step is shared by both flows.
 Once connected, the chain and wallet address are locked in for the session start permit. The chain must be set here — the system will not fall back to any wallet-internal chain.
 
 **What you see**  
-![](https://raw.githubusercontent.com/xgr-network/XGR/main/pictures/ui/ops/manageSession/manage-session/Manage_Session_Step_1.png) — Chain + wallet selection with the connect button and connection status.
+![](https://raw.githubusercontent.com/xgr-network/XGR/main/pictures/ui/ops/manageSession/Manage_Session_Step_1.png) — Chain + wallet selection with the connect button and connection status.
 
 ---
 
@@ -52,10 +52,10 @@ Once connected, the chain and wallet address are locked in for the session start
 After connecting you choose how you want to configure the session:
 
 **What you see (Dialog choice)**  
-![](https://raw.githubusercontent.com/xgr-network/XGR/main/pictures/ui/ops/manageSession/manage-session/Manage_Session_Dialog_Step_2.png) — Mode selection between Dialog and Import.
+![](https://raw.githubusercontent.com/xgr-network/XGR/main/pictures/ui/ops/manageSession/Manage_Session_Dialog_Step_2.png) — Mode selection between Dialog and Import.
 
 **What you see (Import choice)**  
-![](https://raw.githubusercontent.com/xgr-network/XGR/main/pictures/ui/ops/manageSession/manage-session/Manage_Session_Import_Step_2.png) — Import mode selected.
+![](https://raw.githubusercontent.com/xgr-network/XGR/main/pictures/ui/ops/manageSession/Manage_Session_Import_Step_2.png) — Import mode selected.
 
 ---
 
@@ -70,9 +70,9 @@ Enter the **XRC-729 orchestration contract address** and click **Load XRC-729 (C
 The system fetches the orchestration contract, reads the available steps and their rule addresses, and pre-fills the session config with the `orchestration` address, `ostcId`, and `ostcHash`.
 
 **What you see**  
-![](https://raw.githubusercontent.com/xgr-network/XGR/main/pictures/ui/ops/manageSession/manage-session/Manage_Session_Dialog_Step_3_Load_XRC729_From_Chain.png) — XRC-729 address input and load button.
+![](https://raw.githubusercontent.com/xgr-network/XGR/main/pictures/ui/ops/manageSession/Manage_Session_Dialog_Step_3_Load_XRC729_From_Chain.png) — XRC-729 address input and load button.
 
-![](https://raw.githubusercontent.com/xgr-network/XGR/main/pictures/ui/ops/manageSession/manage-session/Manage_Session_Dialog_Step_4_Load_XRC729_From_Chain.png) — XRC-729 loaded: contract details and resolved orchestration identifier are shown.
+![](https://raw.githubusercontent.com/xgr-network/XGR/main/pictures/ui/ops/manageSession/Manage_Session_Dialog_Step_4_Load_XRC729_From_Chain.png) — XRC-729 loaded: contract details and resolved orchestration identifier are shown.
 
 ### 5.2 Choose the start step
 
@@ -81,7 +81,7 @@ Select the **step** from the dropdown. Only steps defined in the loaded XRC-729 
 After selection, the XRC-137 address for that step is displayed alongside the step identifier.
 
 **What you see**  
-![](https://raw.githubusercontent.com/xgr-network/XGR/main/pictures/ui/ops/manageSession/manage-session/Manage_Session_Dialog_Step_5_Choose_Start_Step.png) — Step selector with XRC-137 address shown once a step is chosen.
+![](https://raw.githubusercontent.com/xgr-network/XGR/main/pictures/ui/ops/manageSession/Manage_Session_Dialog_Step_5_Choose_Start_Step.png) — Step selector with XRC-137 address shown once a step is chosen.
 
 ### 5.3 Load XRC-137 payload schema
 
@@ -90,7 +90,7 @@ Click **Load XRC-137 (Payload)** to fetch the rule contract for the selected ste
 This populates the payload form with the correct field names and types as defined on-chain. Without this step, you would need to fill payload fields manually.
 
 **What you see**  
-![](https://raw.githubusercontent.com/xgr-network/XGR/main/pictures/ui/ops/manageSession/manage-session/Manage_Session_Dialog_Step_6_Load_XRC137_From_Chain.png) — Load XRC-137 button and confirmation that the schema has been loaded.
+![](https://raw.githubusercontent.com/xgr-network/XGR/main/pictures/ui/ops/manageSession/Manage_Session_Dialog_Step_6_Load_XRC137_From_Chain.png) — Load XRC-137 button and confirmation that the schema has been loaded.
 
 ### 5.4 Fill payload fields
 
@@ -99,7 +99,7 @@ Once the XRC-137 schema is loaded, the payload fields appear. Fill them in accor
 Fields that are part of the rule schema are shown as form inputs. You can also see and edit the raw JSON representation.
 
 **What you see**  
-![](https://raw.githubusercontent.com/xgr-network/XGR/main/pictures/ui/ops/manageSession/manage-session/Manage_Session_Dialog_Step_7_Payload_Fields.png) — Payload fields rendered from the XRC-137 schema with form inputs and layout toggle.
+![](https://raw.githubusercontent.com/xgr-network/XGR/main/pictures/ui/ops/manageSession/Manage_Session_Dialog_Step_7_Payload_Fields.png) — Payload fields rendered from the XRC-137 schema with form inputs and layout toggle.
 
 ### 5.5 Configure WakeUp / AllowList (optional)
 
@@ -113,12 +113,12 @@ There are two levels of configuration:
 - **rpc**: addresses that may wake up the step via RPC call.
 
 **What you see (Default)**  
-![](https://raw.githubusercontent.com/xgr-network/XGR/main/pictures/ui/ops/manageSession/manage-session/Manage_Session_Dialog_Step_8_AllowList_Default.png) — Default WakeUp configuration with the three allow categories.
+![](https://raw.githubusercontent.com/xgr-network/XGR/main/pictures/ui/ops/manageSession/Manage_Session_Dialog_Step_8_AllowList_Default.png) — Default WakeUp configuration with the three allow categories.
 
 **Per-Step overrides** — you can also define step-specific WakeUp rules for individual steps (by their step ID):
 
 **What you see (per-Step)**  
-![](https://raw.githubusercontent.com/xgr-network/XGR/main/pictures/ui/ops/manageSession/manage-session/Manage_Session_Dialog_Step_9_AllowList_Step.png) — Step-level WakeUp overrides for specific step IDs.
+![](https://raw.githubusercontent.com/xgr-network/XGR/main/pictures/ui/ops/manageSession/Manage_Session_Dialog_Step_9_AllowList_Step.png) — Step-level WakeUp overrides for specific step IDs.
 
 If you do not need to restrict who can wake up the session, you can leave this section empty.
 
@@ -129,7 +129,7 @@ Secrets are string tokens that are passed inside the payload under the reserved 
 Enable the Secrets section, then add one or more secret values. Each value must be a non-empty string of up to 512 characters without control characters.
 
 **What you see**  
-![](https://raw.githubusercontent.com/xgr-network/XGR/main/pictures/ui/ops/manageSession/manage-session/Manage_Session_Dialog_Step_10_Secrets.png) — Secret fields with enable toggle and add/remove controls.
+![](https://raw.githubusercontent.com/xgr-network/XGR/main/pictures/ui/ops/manageSession/Manage_Session_Dialog_Step_10_Secrets.png) — Secret fields with enable toggle and add/remove controls.
 
 ### 5.7 Add to queue
 
@@ -138,14 +138,14 @@ Once XRC-729, a start step, and (optionally) the payload are set, click **Add to
 The session configuration is staged in the queue for review before starting. You can add multiple sessions to the queue and start them all in one go.
 
 **What you see**  
-![](https://raw.githubusercontent.com/xgr-network/XGR/main/pictures/ui/ops/manageSession/manage-session/Manage_Session_Dialog_Step_11_Add_To_Queue.png) — Queue with the staged session entry and available actions.
+![](https://raw.githubusercontent.com/xgr-network/XGR/main/pictures/ui/ops/manageSession/Manage_Session_Dialog_Step_11_Add_To_Queue.png) — Queue with the staged session entry and available actions.
 
 ### 5.8 Re-edit a queued session (optional)
 
 You can click the **edit** icon on any queue entry to reopen the configuration dialog for that item, make changes, and save them back to the queue.
 
 **What you see**  
-![](https://raw.githubusercontent.com/xgr-network/XGR/main/pictures/ui/ops/manageSession/manage-session/Manage_Session_Dialog_Step_12_ReEdit.png) — Queue entry open for editing.
+![](https://raw.githubusercontent.com/xgr-network/XGR/main/pictures/ui/ops/manageSession/Manage_Session_Dialog_Step_12_ReEdit.png) — Queue entry open for editing.
 
 ---
 
@@ -171,7 +171,7 @@ The JSON can be a **single session object** or an **array of session objects**. 
 ```
 
 **What you see**  
-![](https://raw.githubusercontent.com/xgr-network/XGR/main/pictures/ui/ops/manageSession/manage-session/Manage_Session_Import_Step_3_import_Session_Json.png) — JSON editor with the import button and a loaded session.
+![](https://raw.githubusercontent.com/xgr-network/XGR/main/pictures/ui/ops/manageSession/Manage_Session_Import_Step_3_import_Session_Json.png) — JSON editor with the import button and a loaded session.
 
 > **Tip:** You can download your current queue as a JSON snapshot using the "Show queue JSON snapshot" link. This is useful for saving and re-importing a batch.
 
@@ -192,7 +192,7 @@ The system checks:
 Each session is shown as a draft card with a **valid** (green) or **error** (red) state. Warnings are shown in amber.
 
 **What you see**  
-![](https://raw.githubusercontent.com/xgr-network/XGR/main/pictures/ui/ops/manageSession/manage-session/Manage_Session_Import_Step_4_validate_stage.png) — Validate + Stage in progress with per-session status.
+![](https://raw.githubusercontent.com/xgr-network/XGR/main/pictures/ui/ops/manageSession/Manage_Session_Import_Step_4_validate_stage.png) — Validate + Stage in progress with per-session status.
 
 ### 6.3 Review staged drafts
 
@@ -203,7 +203,7 @@ After validation, the draft cards appear below the editor. Each card shows the o
 - **Drafts with warnings** (amber) can still be queued; the warning is informational.
 
 **What you see**  
-![](https://raw.githubusercontent.com/xgr-network/XGR/main/pictures/ui/ops/manageSession/manage-session/Manage_Session_Import_Step_5_Stage_Drafts.png) — Staged draft cards with status indicators and queue/edit actions.
+![](https://raw.githubusercontent.com/xgr-network/XGR/main/pictures/ui/ops/manageSession/Manage_Session_Import_Step_5_Stage_Drafts.png) — Staged draft cards with status indicators and queue/edit actions.
 
 ---
 
@@ -219,7 +219,7 @@ For each queued session, the system:
 You will be prompted to sign once per session in your wallet.
 
 **What you see**  
-![](https://raw.githubusercontent.com/xgr-network/XGR/main/pictures/ui/ops/manageSession/manage-session/Manage_Session_Step_6_Start_Session.png) — Queue with the Start Session / Start All button.
+![](https://raw.githubusercontent.com/xgr-network/XGR/main/pictures/ui/ops/manageSession/Manage_Session_Step_6_Start_Session.png) — Queue with the Start Session / Start All button.
 
 ### 7.1 Session started
 
@@ -232,7 +232,7 @@ After a successful start you see a confirmation entry in the **Started Sessions*
 - Payload snapshot (secrets are always stripped from this log)
 
 **What you see**  
-![](https://raw.githubusercontent.com/xgr-network/XGR/main/pictures/ui/ops/manageSession/manage-session/Manage_Session_Step_7_Session_Started.png) — Started Sessions log with the new entry.
+![](https://raw.githubusercontent.com/xgr-network/XGR/main/pictures/ui/ops/manageSession/Manage_Session_Step_7_Session_Started.png) — Started Sessions log with the new entry.
 
 ---
 
