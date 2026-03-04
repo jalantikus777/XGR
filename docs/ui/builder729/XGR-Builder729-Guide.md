@@ -186,8 +186,8 @@ To add join logic to an existing spawn connection:
 
 | Field | Description |
 |-------|-------------|
-| **Join mode (metadata)** | `any` (default — first source triggers), `all` (wait for all sources), or `kofn` (k-of-n — wait for k sources to complete, requires specifying k value) |
-| **k** | Number input — only visible when mode is `kofn`. Specifies how many sources must complete before the join triggers. Must be ≥ 1 and ≤ number of join sources. |
+| **Join mode (metadata)** | `any` (default — first source triggers), `all` (wait for all sources), or **k-of-n** (stored as an object like `{"kofn": 2}`) |
+| **k** | Number input — only visible when join mode is **k-of-n**. Stored in the JSON inside `mode` as `{"kofn": <k>}`. Must be ≥ 1 and ≤ number of join sources. |
 | **Kill** | Checkbox — terminate other branches when join triggers (`waitonjoin: "kill"`) |
 | **Join sources (nodes)** | List of source nodes that feed into this join |
 
@@ -205,7 +205,7 @@ Each join source specifies:
 
 - `mode: "any"` is the default and **omitted** from the JSON output (implicit)
 - `mode: "all"` is explicitly stored when selected
-- `mode: "kofn"` requires an accompanying `k` field (e.g., `"mode": "kofn", "k": 2`)
+- **k-of-n** is stored as an object inside `mode` (e.g., `"mode": { "kofn": 2 }`). There is **no separate `k` field**.
 - `when: "both"` is the default for join sources and **omitted** from the JSON output
 
 ---
@@ -424,8 +424,7 @@ The orchestration JSON follows this structure:
 | **join** | Join configuration object |
 | **join.joinid** | Target step ID to continue to |
 | **join.from** | Array of source nodes with `node` and optional `when` |
-| **join.mode** | `any` (default, omitted), `all`, or `kofn` (with `k`) |
-| **join.k** | Required number of sources for `kofn` mode |
+| **join.mode** | `any` (default, omitted), `all`, or an object for k-of-n (e.g., `{ "kofn": 2 }`) |
 | **join.waitonjoin** | Optional: `"kill"` to terminate other branches |
 
 ---
