@@ -461,10 +461,13 @@ If you are targeting your current testnet genesis snapshot:
 
 - `chainId = 1879`  
 - IBFT PoA with `validator_type = bls`  
-- major forks enabled from genesis (e.g., London at block 0)  
+- baseline forks enabled from genesis (including London at block 0)  
+- `EIP2930`, `EIP2929`, `EIP3860`, and `EIP3651` activated from block `1208500`  
+- effectively **Berlin + partial Shanghai** from block `1208500` onward  
+- withdrawals are **not** enabled  
 - engine registry address configured (`engineRegistryAddress` present)  
 
-This is useful for wallets and EIP-712 domain `chainId`, and for aligning expectations around finality and RPC compatibility.
+This is useful for wallets and EIP-712 domain `chainId`, and for aligning expectations around finality, execution semantics, and RPC compatibility.
 
 ---
 

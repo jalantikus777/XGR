@@ -2,7 +2,7 @@
 
 **Document ID:** XGRCHAIN-SPEC  
 **Status:** Draft  
-**Last updated:** 2026-02-07  
+**Last updated:** 2026-03-07  
 **Audience:** Protocol integrators, node operators, auditors
 
 ---
@@ -13,7 +13,7 @@ This document defines the **chain-level specification** for **XGR Chain** (`xgrc
 
 - Network identity
 - Consensus configuration (**IBFT PoA with BLS validators**)
-- Execution and fork configuration (EVM hardforks enabled from genesis)
+- Execution and fork configuration (baseline EVM forks from genesis; Berlin + partial Shanghai activated later)
 - Genesis-defined parameters (bootnodes, allocations)
 - Fee model references
 
@@ -46,7 +46,7 @@ XGR Chain is built on **Polygon Edge** and provides:
 
 ## 4. Execution hardfork configuration
 
-XGR Chain enables the following EVM forks from **block 0** (genesis):
+XGR Chain uses a staged fork activation model. The following baseline EVM forks are enabled from **block 0** (genesis):
 
 - `homestead`
 - `byzantium`
@@ -59,7 +59,18 @@ XGR Chain enables the following EVM forks from **block 0** (genesis):
 - `quorumcalcalignment`
 - `txHashWithType`
 
-**Implication:** the network behaves as a “modern” EVM chain from genesis, including EIP-1559-style transaction fields.
+Additional fork features are activated from **block `1208500`**:
+
+- `EIP2930` — Berlin access-list transactions
+- `EIP2929` — Berlin gas repricing for state access opcodes
+- `EIP3860` — Shanghai initcode metering / limit
+- `EIP3651` — Shanghai warm `COINBASE`
+
+This means the chain runs with **Berlin** and a **partial Shanghai** feature set from block `1208500` onward.
+
+**Not active:** withdrawal processing is **not** enabled; in particular, Shanghai withdrawals (`EIP4895`) are not part of the active fork set.
+
+**Implication:** the network behaves as a modern EVM chain from genesis, including EIP-1559-style transaction fields, with the additional Berlin and selected Shanghai execution rules applying from block `1208500`.
 
 ---
 

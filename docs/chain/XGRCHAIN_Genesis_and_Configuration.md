@@ -2,7 +2,7 @@
 
 **Document ID:** XGRCHAIN-GENESIS  
 **Status:** Draft  
-**Last updated:** 2026-02-07  
+**Last updated:** 2026-03-07  
 **Audience:** Node operators, network maintainers, auditors
 
 ---
@@ -71,7 +71,7 @@ The following parameters effectively define the network identity:
    - Changing consensus settings changes block production and validator rules.
 
 4) **`params.forks.*`**  
-   XGR Chain activates modern EVM hardfork behavior from block 0.
+   XGR Chain uses baseline EVM forks from genesis and activates additional Berlin / partial Shanghai rules from block `1208500`.
 
 ---
 
@@ -166,8 +166,39 @@ If the registry address is unset or the contract is not deployed at that address
 
 ## 9. Fork configuration
 
-XGR Chain activates all relevant hardforks at block 0.  
-This enables modern EVM features immediately, including EIP-1559-compatible transactions.
+XGR Chain does **not** activate all supported hardfork flags at block 0.
+
+### 9.1 Active from genesis
+
+The baseline chain configuration is active from genesis, including:
+
+- `homestead`
+- `byzantium`
+- `constantinople`
+- `petersburg`
+- `istanbul`
+- `london`
+- `londonfix`
+- `EIP150`, `EIP155`, `EIP158`
+- `quorumcalcalignment`
+- `txHashWithType`
+
+This provides a modern EVM baseline from block 0, including EIP-1559-compatible transaction handling.
+
+### 9.2 Active from block `1208500`
+
+The following fork features are activated at block `1208500`:
+
+- `EIP2930` — Berlin access-list transactions
+- `EIP2929` — Berlin gas repricing for state access opcodes
+- `EIP3860` — Shanghai initcode metering / limit
+- `EIP3651` — Shanghai warm `COINBASE`
+
+Operationally, this means **Berlin** and a **partial Shanghai** execution feature set become active from block `1208500`.
+
+### 9.3 Not active
+
+Shanghai withdrawals are **not** enabled. In particular, `EIP4895` is not active in the current chain configuration.
 
 ---
 
