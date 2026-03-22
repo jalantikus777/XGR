@@ -1,3 +1,5 @@
-curl https://rpc.xgr.network \
-  -H 'Content-Type: application/json' \
-  -d '{"jsonrpc":"2.0","id":1,"method":"eth_blockNumber","params":[]}'
+Name: XGR Mainnet
+RPC URL: https://rpc.xgr.network
+Chain ID: 1643
+Symbol: XGR
+Blockchain Explorer: https://explorer.xgr.network
